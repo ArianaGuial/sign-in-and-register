@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Materials</title>
+    <link rel="stylesheet" href="materials.css">
+    <title>Materials</title>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="/" class="logo">
+                    <img src="img/logo.png" alt="Logo">
+                </a>
+                <div class="nav-links">
+                    <a href="/products">Products</a>
+                    <a href="/community">Community</a>
+                    <a href="/resources">Resources</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="signin.html" class="sign-in">Sign in</a>
+                <a href="register.html" class="register">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Existing content starts here -->
+    <header class="content-header">
+        <h1>Construction Materials</h1>
+        <p class="subtitle">Browse our selection of quality materials</p>
+    </header>
+
+    <!-- List View Section -->
+    <section class="list-view">
+        <div class="material-list-item">
+            <div class="material-image">
+                <img src="img/portlandcement.png" alt="Cement">
+            </div>
+            <div class="material-content">
+                <h2>Portland Cement</h2>
+                <p>High-quality Portland cement suitable for all construction needs. Available in bulk quantities.</p>
+                <button class="view-details-btn" data-material-id="cement">View Details</button>
+            </div>
+        </div>
+
+        <div class="material-list-item">
+            <div class="material-image">
+                <img src="img/steelrebar.png" alt="Steel">
+            </div>
+            <div class="material-content">
+                <h2>Steel Rebar</h2>
+                <p>Construction grade steel reinforcement bars available in various sizes and specifications.</p>
+                <button class="view-details-btn" data-material-id="steel-rebar">View Details</button>
+            </div>
+        </div>
+
+        <div class="material-list-item">
+            <div class="material-image">
+                <img src="img/claybricks.png" alt="Bricks">
+            </div>
+            <div class="material-content">
+                <h2>Clay Bricks</h2>
+                <p>Premium quality clay bricks perfect for both structural and aesthetic applications.</p>
+                <button class="view-details-btn" data-material-id="clay-bricks">View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid View Section -->
+    <section class="grid-section">
+        <h2>Featured Materials</h2>
+        <div class="materials-grid">
+            <div class="grid-item">
+                <img src="img/constructionsand.png" alt="Sand">
+                <h3>Construction Sand</h3>
+                <p>Fine quality sand for construction use</p>
+                <button class="view-details-btn" data-material-id="sand">View Details</button>
+            </div>
+
+            <div class="grid-item">
+                <img src="img/gravel.png" alt="Gravel">
+                <h3>Gravel</h3>
+                <p>Mixed size gravel for various uses</p>
+                <button class="view-details-btn" data-material-id="gravel">View Details</button>
+            </div>
+
+            <div class="grid-item">
+                <img src="img/constructiontimber.png" alt="Timber">
+                <h3>Construction Timber</h3>
+                <p>Treated timber for construction</p>
+                <button class="view-details-btn" data-material-id="timber">View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this modal structure at the bottom of your body tag -->
+    <div id="material-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            
+            <!-- Portland Cement Details -->
+            <div id="cement-details" class="product-details">
+                <div class="product-image">
+                    <img src="img/portlandcement.png" alt="Portland Cement">
+                </div>
+                
+                <div class="product-info">
+                    <div class="product-tag">Top Seller</div>
+                    <h1 class="product-name">Portland Cement</h1>
+                    <div class="product-price">
+                        <span class="currency">$</span>
+                        <span class="amount">50</span>
+                        <span class="unit">/bag</span>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Package Size</label>
+                            <select>
+                                <option>50 kg</option>
+                                <option>25 kg</option>
+                            </select>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Grade</label>
+                            <select>
+                                <option>Grade 43</option>
+                                <option>Grade 53</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn" onclick="addToCart(this)" data-product-id="cement" data-product-name="Portland Cement" data-product-price="50">Add to Cart</button>
+
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p>High-quality Portland cement suitable for all construction needs. Provides excellent strength and durability for your construction projects.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Steel Rebar Details -->
+            <div id="steel-rebar-details" class="product-details" style="display: none;">
+                <div class="product-image">
+                    <img src="img/steelrebar.png" alt="Steel Rebar">
+                </div>
+                
+                <div class="product-info">
+                    <div class="product-tag">Best Seller</div>
+                    <h1 class="product-name">Steel Rebar</h1>
+                    <div class="product-price">
+                        <span class="currency">$</span>
+                        <span class="amount">8</span>
+                        <span class="unit">/meter</span>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Diameter</label>
+                            <select>
+                                <option>8mm</option>
+                                <option>10mm</option>
+                                <option>12mm</option>
+                                <option>16mm</option>
+                            </select>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Length</label>
+                            <select>
+                                <option>6 meters</option>
+                                <option>9 meters</option>
+                                <option>12 meters</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn" onclick="addToCart(this)" data-product-id="steel-rebar" data-product-name="Steel Rebar" data-product-price="8">Add to Cart</button>
+
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p>High-strength steel reinforcement bars for concrete structures. Meets international quality standards for construction use.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clay Bricks Details -->
+            <div id="clay-bricks-details" class="product-details" style="display: none;">
+                <div class="product-image">
+                    <img src="img/claybricks.png" alt="Clay Bricks">
+                </div>
+                
+                <div class="product-info">
+                    <div class="product-tag">Premium Quality</div>
+                    <h1 class="product-name">Clay Bricks</h1>
+                    <div class="product-price">
+                        <span class="currency">$</span>
+                        <span class="amount">0.75</span>
+                        <span class="unit">/piece</span>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Type</label>
+                            <select>
+                                <option>Common Brick</option>
+                                <option>Face Brick</option>
+                                <option>Engineering Brick</option>
+                            </select>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Quantity</label>
+                            <select>
+                                <option>100 pieces</option>
+                                <option>500 pieces</option>
+                                <option>1000 pieces</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn" onclick="addToCart(this)" data-product-id="clay-bricks" data-product-name="Clay Bricks" data-product-price="0.75">Add to Cart</button>
+
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p>High-quality clay bricks perfect for both structural and decorative applications. Uniform size and color with excellent durability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Construction Sand Details -->
+            <div id="sand-details" class="product-details" style="display: none;">
+                <div class="product-image">
+                    <img src="img/constructionsand.png" alt="Construction Sand">
+                </div>
+                
+                <div class="product-info">
+                    <div class="product-tag">Essential Material</div>
+                    <h1 class="product-name">Construction Sand</h1>
+                    <div class="product-price">
+                        <span class="currency">$</span>
+                        <span class="amount">35</span>
+                        <span class="unit">/ton</span>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Type</label>
+                            <select>
+                                <option>River Sand</option>
+                                <option>Crushed Sand</option>
+                                <option>Pit Sand</option>
+                            </select>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Quantity</label>
+                            <select>
+                                <option>1 ton</option>
+                                <option>5 tons</option>
+                                <option>10 tons</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn" onclick="addToCart(this)" data-product-id="sand" data-product-name="Construction Sand" data-product-price="35">Add to Cart</button>
+
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p>Clean, well-graded construction sand suitable for concrete mixing, mortar, and general construction use.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gravel Details -->
+            <div id="gravel-details" class="product-details" style="display: none;">
+                <div class="product-image">
+                    <img src="img/gravel.png" alt="Gravel">
+                </div>
+                
+                <div class="product-info">
+                    <div class="product-tag">Multiple Sizes</div>
+                    <h1 class="product-name">Construction Gravel</h1>
+                    <div class="product-price">
+                        <span class="currency">$</span>
+                        <span class="amount">40</span>
+                        <span class="unit">/ton</span>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Size</label>
+                            <select>
+                                <option>10mm</option>
+                                <option>20mm</option>
+                                <option>40mm</option>
+                            </select>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Quantity</label>
+                            <select>
+                                <option>1 ton</option>
+                                <option>5 tons</option>
+                                <option>10 tons</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn" onclick="addToCart(this)" data-product-id="gravel" data-product-name="Construction Gravel" data-product-price="40">Add to Cart</button>
+
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p>High-quality crushed stone and gravel for concrete mixing, drainage, and landscaping applications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Construction Timber Details -->
+            <div id="timber-details" class="product-details" style="display: none;">
+                <div class="product-image">
+                    <img src="img/constructiontimber.png" alt="Construction Timber">
+                </div>
+                
+                <div class="product-info">
+                    <div class="product-tag">Treated Wood</div>
+                    <h1 class="product-name">Construction Timber</h1>
+                    <div class="product-price">
+                        <span class="currency">$</span>
+                        <span class="amount">15</span>
+                        <span class="unit">/meter</span>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Dimensions</label>
+                            <select>
+                                <option>2x4 inches</option>
+                                <option>2x6 inches</option>
+                                <option>4x4 inches</option>
+                            </select>
+                        </div>
+
+                        <div class="option-group">
+                            <label>Length</label>
+                            <select>
+                                <option>2 meters</option>
+                                <option>3 meters</option>
+                                <option>4 meters</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="add-to-cart-btn" onclick="addToCart(this)" data-product-id="timber" data-product-name="Construction Timber" data-product-price="15">Add to Cart</button>
+
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p>Pressure-treated construction timber suitable for both structural and general construction applications. Resistant to decay and insects.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="reviews-section">
+                <h2>Latest reviews</h2>
+
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <h3>Excellent quality</h3>
+                        <p>Perfect for my construction project.</p>
+                        <div class="reviewer">
+                            <img src="img/user.png" alt="Reviewer">
+                            <div class="reviewer-info">
+                                <span class="reviewer-name">John Smith</span>
+                                <span class="review-date">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviews-grid">
+                        <div class="review-card">
+                            <div class="stars">★★★★★</div>
+                            <h3>Excellent quality</h3>
+                            <p>Perfect for my construction project.</p>
+                            <div class="reviewer">
+                                <img src="img/user.png" alt="Reviewer">
+                                <div class="reviewer-info">
+                                    <span class="reviewer-name">Cameron Dallas</span>
+                                    <span class="review-date">4 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-grid">
+                            <div class="review-card">
+                                <div class="stars">★★★★★</div>
+                                <h3>Excellent quality</h3>
+                                <p>Perfect for my construction project.</p>
+                                <div class="reviewer">
+                                    <img src="img/user.png" alt="Reviewer">
+                                    <div class="reviewer-info">
+                                        <span class="reviewer-name">Jason Maroon</span>
+                                        <span class="review-date">6 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Make sure to include the JavaScript file -->
+    <script src="materials.js"></script>
+</body>
+</html>
