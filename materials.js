@@ -140,3 +140,105 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 }); 
+
+// Function to add product to cart
+let cart = [];
+
+function addToCart(button) {
+    const productId = button.getAttribute('data-product-id');
+    const productName = button.getAttribute('data-product-name');
+    const productPrice = button.getAttribute('data-product-price');
+
+    // Create a product object and add it to the cart
+    const product = {
+        id: productId,
+        name: productName,
+        price: parseFloat(productPrice)
+    };
+
+    cart.push(product);
+    updateCartDropdown();
+}
+
+// Function to update the cart dropdown
+function updateCartDropdown() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = '';
+
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        cartItemsContainer.appendChild(li);
+    });
+}
+
+// Toggle cart dropdown visibility when the cart icon is clicked
+document.getElementById('cart-icon').addEventListener('click', () => {
+    const cartDropdown = document.getElementById('cart-dropdown');
+    cartDropdown.style.display = cartDropdown.style.display === 'none' || cartDropdown.style.display === '' ? 'block' : 'none';
+});
+
+const modalCloseButton = document.querySelector('.close-modal');
+modalCloseButton.addEventListener('click', () => {
+    document.getElementById('material-modal').style.display = 'none';
+});
+
+// Added to cart notification
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Add to Cart functionality
+    function addToCart(button) {
+        const productId = button.getAttribute('data-product-id');
+        const productName = button.getAttribute('data-product-name');
+        const productPrice = button.getAttribute('data-product-price');
+
+        const cartItem = {
+            id: productId,
+            name: productName,
+            price: productPrice
+        };
+
+         // Show success message (notification)
+         const button_text = button.textContent;
+         button.textContent = 'Added to Cart!';
+         button.style.backgroundColor = '#28a745';
+         button.disabled = true;
+
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 3000);
+    }
+
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            addToCart(this);
+        });
+    });
+});
+
+// User Profile Dropdown
+document.getElementById('user-icon').addEventListener('click', function() {
+    var userDropdown = document.getElementById('user-dropdown');
+    // Toggle the dropdown visibility
+    if (userDropdown.style.display === 'none' || userDropdown.style.display === '') {
+        userDropdown.style.display = 'block';
+    } else {
+        userDropdown.style.display = 'none';
+    }
+});
+
+// Close the dropdown if the user clicks anywhere outside of the user icon
+window.addEventListener('click', function(event) {
+    var userDropdown = document.getElementById('user-dropdown');
+    var userProfile = document.getElementById('user-profile');
+    if (!userProfile.contains(event.target)) {
+        userDropdown.style.display = 'none';
+    }
+});
+
+// Handle Sign-Out button click
+document.getElementById('sign-out-btn').addEventListener('click', function() {
+    // Optionally, redirect to the home page or login page
+    window.location.href = 'signin.html';  // Example redirect
+});
+

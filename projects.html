@@ -3,28 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Construction Site Monitoring</title>
-    <link rel="stylesheet" href="siteprojects.css">
+    <title>Projects</title>
+    <link rel="stylesheet" href="projects.css">
 </head>
 <body>
     <!-- Navigation Header -->
     <nav class="main-nav">
         <div class="nav-container">
+
             <div class="nav-left">
                 <a href="/" class="logo">
                     <img src="img/logo.png" alt="Logo">
                 </a>
                 <div class="nav-links">
-                    <a href="/products">Products</a>
-                    <a href="/community">Community</a>
-                    <a href="/resources">Resources</a>
-                    <a href="/pricing">Pricing</a>
+                    <a href="materials.html">Products</a>
+                    <a href="projects.html" class="projects-link">Projects</a>
                     <a href="/contact">Contact</a>
                 </div>
             </div>
+
             <div class="nav-right">
-                <a href="signin.html" class="sign-in">Sign in</a>
-                <a href="register.html" class="register">Register</a>
+                <div class="user-profile" id="user-profile">
+                    <img src="img/user.png" alt="user" id="user-icon">
+
+                    <!-- User Dropdown -->
+                    <div id="user-dropdown" class="user-dropdown" style="display: none;">
+                        <div class="user-info">
+                            <p><strong>Ariana Guial</strong></p>
+                            <p>guialmariearianalexi@gmail.com</p>
+                        </div>
+                        <button id="sign-out-btn">Sign Out</button>
+                    </div>
+
+                </div>
             </div>
         </div>
     </nav>
@@ -77,5 +88,7 @@
             </div>
         </div>
     </main>
+
+<script src="projects.js"></script>
 </body>
 </html>

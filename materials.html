@@ -7,25 +7,48 @@
     <link rel="stylesheet" href="materials.css">
     <title>Materials</title>
 </head>
+
 <body>
     <!-- Navigation Header -->
     <nav class="main-nav">
         <div class="nav-container">
+
             <div class="nav-left">
                 <a href="/" class="logo">
                     <img src="img/logo.png" alt="Logo">
                 </a>
                 <div class="nav-links">
-                    <a href="/products">Products</a>
-                    <a href="/community">Community</a>
-                    <a href="/resources">Resources</a>
-                    <a href="/pricing">Pricing</a>
+                    <a href="materials.html" class="products-link">Products</a>
+                    <a href="projects.html">Projects</a>
                     <a href="/contact">Contact</a>
                 </div>
             </div>
+
             <div class="nav-right">
-                <a href="signin.html" class="sign-in">Sign in</a>
-                <a href="register.html" class="register">Register</a>
+                <div class="nav-right2" id="cart-icon">
+                    <img src="img/cart.png" alt="cart">
+
+                    <!-- Cart Dropdown -->
+                    <div id="cart-dropdown" class="cart-dropdown" style="display: none;">
+                        <h3>Your Cart</h3>
+                        <ul id="cart-items"></ul>
+                    </div>
+                </div>
+
+                <div class="user-profile" id="user-profile">
+                    <img src="img/user.png" alt="user" id="user-icon">
+
+                    <!-- User Dropdown -->
+                    <div id="user-dropdown" class="user-dropdown" style="display: none;">
+                        <div class="user-info">
+                            <p><strong>Ariana Guial</strong></p>
+                            <p>guialmariearianalexi@gmail.com</p>
+                        </div>
+                        <button id="sign-out-btn">Sign Out</button>
+                    </div>
+
+                </div>
+        
             </div>
         </div>
     </nav>
@@ -92,7 +115,7 @@
 
             <div class="grid-item">
                 <img src="img/constructiontimber.png" alt="Timber">
-                <h3>Construction Timber</h3>
+                <h3>Timber</h3>
                 <p>Treated timber for construction</p>
                 <button class="view-details-btn" data-material-id="timber">View Details</button>
             </div>
@@ -323,15 +346,15 @@
                 </div>
             </div>
 
-            <!-- Construction Timber Details -->
+            <!-- Timber Details -->
             <div id="timber-details" class="product-details" style="display: none;">
                 <div class="product-image">
-                    <img src="img/constructiontimber.png" alt="Construction Timber">
+                    <img src="img/constructiontimber.png" alt="Timber">
                 </div>
                 
                 <div class="product-info">
                     <div class="product-tag">Treated Wood</div>
-                    <h1 class="product-name">Construction Timber</h1>
+                    <h1 class="product-name">Timber</h1>
                     <div class="product-price">
                         <span class="currency">$</span>
                         <span class="amount">15</span>
@@ -358,7 +381,7 @@
                         </div>
                     </div>
 
-                    <button class="add-to-cart-btn" onclick="addToCart(this)" data-product-id="timber" data-product-name="Construction Timber" data-product-price="15">Add to Cart</button>
+                    <button class="add-to-cart-btn" onclick="addToCart(this)" data-product-id="timber" data-product-name="Timber" data-product-price="15">Add to Cart</button>
 
                     <div class="product-description">
                         <h3>Description</h3>
